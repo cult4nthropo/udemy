@@ -1,50 +1,54 @@
 package udemy.beginner.exercises.consoleWanderer;
 
 public class Playground {
-    private String stone = "#";
-    private int rightBoarder;
-    private int buttomBorder;
 
-    public Playground setButtomBorder(int buttomBorder) {
-        this.buttomBorder = buttomBorder;
-        return this;
+    final char stone = '#';
+
+    private char[][] playground;
+
+    Playground() {
+        playground = new char[10][10];
     }
 
-    public int getRightBoarder() {
-        return rightBoarder;
+    public char[][] getPlayground() {
+        return playground;
     }
 
-    public int getButtomBorder() {
-        return buttomBorder;
+    public void setPlayground(char[][] playground) {
+        this.playground = playground;
     }
 
-    public Playground setRightBoarder(int rightBoarder) {
-        this.rightBoarder = rightBoarder;
-        return this;
+    public char getStone() {
+        return stone;
     }
 
-    public void drawPlayground() {
-        String[][] field = new String[rightBoarder][buttomBorder];
-        for (int i = 0; i < field.length; i++) {
-            for (int j = 0; j < field[i].length; j++) {
-                System.out.println("done");
-                if ((i == 0) || (i == rightBoarder-1) || (j == 0) || (j == buttomBorder-1)) {
-                    field [i][j] = "#";
+    /**
+     * creates the playground
+     */
+    public void buildPlayground() {
+
+        for (int i = 0; i < playground.length; i++) {
+            for (int j = 0; j < playground[i].length; j++) {
+                if ((i == 0) || (i == playground.length-1) || (j == 0) || (j == playground[i].length-1)) {
+                    playground[i][j] = stone;
                 } else {
-                    field[i][j] = " ";
+                    playground[i][j] = ' ';
                 }
             }
-            Player player = new Player();
-            field[player.getxPosition()][player.getyPosition()] = player.getSymbol();
-            System.out.println(player.getxPosition());
-            System.out.println(rightBoarder);
         }
-        for (int i = 0; i < field.length; i ++){
-            for (int j = 0; j < field[i].length; j++) {
-                System.out.print(field[i][j]);
+    }
+
+    /**
+     * Draws the playground
+     * '#' marks the borders of the playground
+     */
+    public void drawPlayground() {
+
+        for (int i = 0; i < playground.length; i ++){
+            for (int j = 0; j < playground[i].length; j++) {
+                System.out.print(playground[i][j]);
             }
             System.out.println();
         }
     }
-
 }

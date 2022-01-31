@@ -4,14 +4,29 @@ import java.util.Scanner;
 
 public class ConsoleWanderer {
     public static void main (String [] args) {
-        System.out.println("Wie breit soll dein Spielfeld sein?");
         Scanner scanner = new Scanner(System.in);
         Playground playground = new Playground();
-        int rightBoarder = scanner.nextInt();
-        playground.setRightBoarder(rightBoarder);
-        System.out.println("Wie hoch soll dein Spielfeld sein?");
-        int buttomBoarder = scanner.nextInt();
-        playground.setButtomBorder(buttomBoarder);
+
+        /**
+         * draws the initial playground
+         */
+        playground.buildPlayground();
+        Player player = new Player(playground);
         playground.drawPlayground();
+        boolean continueMoving = true;
+        while (continueMoving) {
+            System.out.println("In welche Richtung willst du gehen?");
+            System.out.println("[a] für links, [w] für hoch, [d] für rechts, [s] für runter, [q] um zu beenden");
+            String playerdirection = scanner.next();
+            if (playerdirection.equals("q")) {
+                continueMoving = false;
+                System.out.println("Ende");
+            }
+            player.setPlayerDirection(playerdirection);
+            player.move(playground);
+
+        }
+
+
     }
 }
