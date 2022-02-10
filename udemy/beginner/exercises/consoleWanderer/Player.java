@@ -33,7 +33,7 @@ public class Player {
             this.playerDirection = 1;
         } else if (playerDirection.equals("s")) {
             this.playerDirection = 2;
-        } 
+        }
     }
 
 
