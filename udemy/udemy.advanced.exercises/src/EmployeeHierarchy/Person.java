@@ -1,4 +1,4 @@
-package udemy.udemy.advanced.exercises.src.EmployeeHierary;
+package udemy.udemy.advanced.exercises.src.EmployeeHierarchy;
 
 public class Person {
     private String firstName;

@@ -1,4 +1,4 @@
-package udemy.udemy.advanced.exercises.src.EmployeeHierary;
+package udemy.udemy.advanced.exercises.src.EmployeeHierarchy;
 
 public class Program {
     public static void main (String[] args) {
