@@ -1,4 +1,4 @@
-package EmployeeHierary;
+package udemy.udemy.advanced.exercises.src.EmployeeHierary;
 
 public class Employee extends Person{
     private long employeeID;

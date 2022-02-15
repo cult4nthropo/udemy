@@ -1,4 +1,4 @@
-package EmployeeHierary;
+package udemy.udemy.advanced.exercises.src.EmployeeHierary;
 
 public class Manager extends Employee{
     private int numberOfEmployees;
